@@ -55,4 +55,10 @@ class MahasiswaController extends Controller
         ]);
         return redirect('/mahasiswa');
     }
+
+    public function hapus($id)
+    {
+        DB::table('mahasiswa')->where('id',$id)->delete();
+        return redirect('/mahasiswa');
+    }
 }

@@ -8,27 +8,26 @@
     <a href="/mahasiswa" class="btn btn-danger">Kembali</a>
     <br/>
     <br/>
-    @foreach($mahasiswa as $mhs)
-    <form action="/mahasiswa/update" method="post">
+
+    <form action="/mahasiswa/update/{{ $mahasiswa->id }}" method="post">
         {{ csrf_field() }}
-        <input type="hidden" name="id" value="{{ $mhs->id }}"> <br/>
+        <input type="hidden" name="id" value="{{ $mahasiswa->id }}"> <br/>
         <div class="form-grub">
             <label for="namamhs">Nama</label>
-            <input type="text" class="form-control" required="required" name="namamhs" value="{{ $mhs->nama }}"> <br/>
+            <input type="text" class="form-control" required="required" name="namamhs" value="{{ $mahasiswa->nama }}"> <br/>
         </div>
         <div class="form-grub">
             <label for="nimmhs">NIM</label>
-            <input type="number" class="form-control" required="required" name="nimmhs" value="{{ $mhs->nim }}"> <br/>
+            <input type="number" class="form-control" required="required" name="nimmhs" value="{{ $mahasiswa->nim }}"> <br/>
         </div>
         <div class="form-grub">
             <label for="emailmhs">E-mail</label>
-            <input type="email" class="form-control" required="required" name="emailmhs" value="{{ $mhs->email }}"> <br/>
+            <input type="email" class="form-control" required="required" name="emailmhs" value="{{ $mahasiswa->email }}"> <br/>
         </div>
         <div class="form-grub">
             <label for="jurusanmhs">Jurusab</label>
-            <input type="text" class="form-control" required="required" name="jurusanmhs" value="{{ $mhs->jurusan }}"> <br/>
+            <input type="text" class="form-control" required="required" name="jurusanmhs" value="{{ $mahasiswa->jurusan }}"> <br/>
         </div>
         <button type="submit" name="edit" class="btn btn-primary float-right">Simpan Data</button>
-    </form>
-    @endforeach
+    </form>    
 @endsection
